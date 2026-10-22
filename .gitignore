@@ -1,0 +1,11 @@
+# 本地开发与系统垃圾
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+*.key
+*.pem
+# 本地侧车（值+尺寸双验的 .md5 留痕不进公开仓库，MANIFEST.md 已承担）
+*.md5
