@@ -14,6 +14,10 @@ are **not** counted as self-developed.
 
 ```
   skillsmp-research           # 外部技能生态检索与复用决策器（SkillsMP）
+  compute-cost-optimizer      # 算力底座降本决策器（三口径比价 + 降本抓手）
+  htsd-ruler-suite            # 交付件四把尺子（自检 + 投箱勾验）
+  independent-acceptance-verify# 签收前独立复验（不照单签收）
+docs/                         # 配套自研 MCP 说明（stdio 层实跑证据）
 MANIFEST.md                    # 每件文件的字节数 + md5（值+尺寸双验）
 ```
 
@@ -33,12 +37,23 @@ cp -R skills/<skill-name> ~/.minimax/skills/
 # SkillsMP 检索：先查一次现成能力，再决定自研
 python3 skills/skillsmp-research/skillsmp_search.py search "ffmpeg" --limit 8
 python3 skills/skillsmp-research/skillsmp_search.py self-test     # 离线自检
+
+# 算力降本三口径比价
+python3 skills/compute-cost-optimizer/compute_cost_model.py --help
+
+# 交付件四把尺子：尺子自己先证明自己没坏
+python3 skills/htsd-ruler-suite/scripts/ruler_suite_check.py \
+    --scripts skills/htsd-ruler-suite/scripts --out /tmp/ruler.json
 ```
+
+## 配套自研 MCP / Companion MCP
+
+- `docs/SkillsMP桥接说明_v0.1.md` — **SkillsMP桥接说明_v0.1**：**stdio 层已实跑**（tools/list 返 5 个工具、health reachable=true、http 200）；不声称客户端已可直调。
 
 ## 方法论体例 / Methodology
 
-本仓库当前为**试水发布**：先发 1 件 skill 验证「公开仓库 → SkillsMP 收录」链路是否打通，
-打通后按同一发布树构建器放量。方法条目统一采用**六步体例**（采/验/算/疑/落/用）。
+本仓库收录 **4 件自研 skill** 与**配套自研 MCP 说明**（stdio 层实跑证据）；
+方法条目统一采用**六步体例**（采/验/算/疑/落/用）。
 
 ## 边界 / Scope
 

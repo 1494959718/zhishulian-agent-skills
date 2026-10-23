@@ -7,7 +7,7 @@ description: SkillsMP（Agent Skills 生态地图）检索与复用决策器。�
 
 **为什么需要它**：公司「500 skill」目标如果全靠手写，是把可复用的东西重造一遍。SkillsMP 把 GitHub 上公开的 SKILL.md 收成一张可检索的地图（官方口径 3M+，页面快照计数随 catalog 同步变动，**引用时必须写「官方口径」而不是把页面数字当精确值**）。本 skill 把「先查一次再动手」变成一条**可直调、可自证**的命令。
 
-**归属**：算力底座·设备筹备调研组（B 线：成员B 主责用 skill/插件/MCP 做降本创新）｜公司技能/工具库 保管人：技能库保管人
+**归属**：算力底座项目组（研发线：成员B 主责用 skill/插件/MCP 做降本创新）｜公司技能/工具库 保管人：技能库保管人
 
 ---
 
@@ -58,7 +58,7 @@ SkillsMP 自己写明：*「it does not certify that every skill is safe or high
 - `get_skill` / `list_categories` / `tools.list` / `initialize` **不计检索额度** ⇒ **先取详情，别反复 search**。
 - `totalIsExact=false` ⇒ `total` **不是精确总数**，不要当精确统计写进申报册。
 - 错误码：`RATE_LIMITED` / `DAILY_QUOTA_EXCEEDED`（带 `remaining`/`resetAt`/`retryAfter`）/`SEARCH_COMPLETION_UNCERTAIN`（**可能已计费，停止自动重试，先查用量**）。
-- 可选 key：环境变量 `SKILLSMP_API_KEY`（`Authorization: Bearer sk_live_…`）。**key 不得写进 URL、日志或任何交付件。**
+- 可选 key：环境变量 `SKILLSMP_API_KEY`（`Authorization: Bearer <API_KEY>`）。**key 不得写进 URL、日志或任何交付件。**
 
 ---
 
@@ -91,4 +91,4 @@ SkillsMP 自己写明：*「it does not certify that every skill is safe or high
 - **不提供** SKILL.md 正文（`get_skill` 只给目录元数据）—— 正文回源 GitHub；本机 `curl` 直连 GitHub 在当前网络不通，需走 `web_fetch` 或浏览器。
 - **不承诺** SkillsMP 收录内容的质量、安全性或时效性 —— 它是地图，不是认证。
 
-—— 技能库保管人 · 2026-10-23 · 算力底座·设备筹备调研组 副组长（B 线）＋ 公司技能/工具库建设保管人
+—— 技能库保管人 · 2026-10-23 · 算力底座项目组 副组长（研发线）＋ 公司技能/工具库建设保管人

@@ -25,7 +25,7 @@ skillsmp_search.py — SkillsMP（Agent Skills 生态地图）检索与详情工
   python3 skillsmp_search.py quota                       # 看上次调用剩余额度（读响应头）
   python3 skillsmp_search.py self-test                   # 离线自检，不联网
 
-归属：算力底座·设备筹备调研组（B 线研发）｜公司技能/工具库 保管人：技能库保管人
+归属：算力底座项目组（研发）｜公司技能/工具库 保管人：技能库保管人
 """
 
 import json
